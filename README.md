@@ -1,26 +1,46 @@
-Client HTTP pentru interacțiunea cu un REST API
 
-Acesta tema implementeaza un client HTTP în C care interactioneaza cu un REST API. Clientul nostru funcționează ca o interfață în linia de comandă (CLI) și permite utilizatorilor să trimită comenzi către server și să primească răspunsuri în format JSON.
-Aceasta tema are la baza Laboratorul 9 de la Protocoale de Comunitatii, peste care am implementat totul.
+# HTTP Client
 
-Clientul acceptă următoarele comenzi:
+This project implements an HTTP client in C that interacts with a REST API. Our client works as a command-line interface (CLI) and allows users to send commands to the server and receive responses in JSON format.
 
-- `register`: Înregistrarea unui utilizator nou
-- `login`: Autentificarea unui utilizator existent
-- `enter_library`: Accesarea bibliotecii virtuale
-- `get_book`: Obținerea detaliilor unei cărți specificate prin ID
-- `add_book`: Adăugarea unei cărți noi în bibliotecă
-- `delete_book`: Ștergerea unei cărți specificate
-- `logout`: Deconectarea utilizatorului curent
+## 🌐 Features
 
-Fiecare comanda specificata mai sus este implementata in fisierul Commands, iar Client.c: se ocupa de detectarea comenzilor date de utilizator si de apelarea celei care trebuie.
+- **User Registration (register)** - Registers a new user.
+- **User Authentication (login)** - Authenticates an existing user.
+- **Access Virtual Library (enter_library)** - Grants access to the virtual library.
+- **Retrieve Book Details (get_book)** - Fetches details of a specified book by ID.
+- **Add a New Book (add_book)** - Adds a new book to the library.
+- **Delete a Book (delete_book)** - Removes a specified book.
+- **User Logout (logout)** - Logs out the current user.
 
-Proiectul este structurat în mai multe fișiere pentru a facilita modularizarea codului:
+## 📄 Project Structure
+The project is structured into multiple files to facilitate code modularization:
 
-- client.c: Logica principală a clientului CLI, inclusiv citirea comenzilor de la tastatură și gestionarea sesiunii
-- commands.c și commands.h: Implementarea comenzilor disponibile în CLI și trimiterea cererilor HTTP corespunzătoare
-- helpers.c și helpers.h: Funcții auxiliare pentru diverse operațiuni, precum trimiterea cererilor HTTP către server
-- parson.c și parson.h: Biblioteca `parson` pentru manipularea obiectelor JSON
-- requests.c și requests.h: Construirea cererilor HTTP către server
+- **client.c** - Main logic of the CLI client, including reading user commands and managing sessions.
+- **commands.c & commands.h** - Implementation of available CLI commands and sending corresponding HTTP requests.
+- **helpers.c & helpers.h** - Auxiliary functions for various operations, such as sending HTTP requests to the server.
+- **parson.c & parson.h** - parson library for handling JSON objects.
+- **requests.c & requests.h** - Construction of HTTP requests to the server.
 
-Libraria utilizata pentu a parsa JSON este parson, care este inclusa.
+## 🔨 Build & Installation
+
+Before installing, ensure that all necessary dependencies are already installed.
+
+### Build Instructions
+
+Follow these steps to clone, build, and run the HTTP client:
+
+```sh
+# Clone the repository
+git clone https://github.com/MariusS16/Client-HTTP.git
+cd Client-HTTP
+
+# Build the project
+make
+
+# Run the HTTP client
+make run
+```
+
+## 💫 For suggestions or bug reports, feel free to open an issue with the appropriate label.
+
